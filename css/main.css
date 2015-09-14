@@ -35,9 +35,9 @@ video {
 }
 
 fieldset {
-    border: 0;
+    border: 1px solid black;
     margin: 0;
-    padding: 0;
+    padding: 15px;
 }
 
 textarea {
@@ -66,28 +66,32 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Blue Theme
    =================== */
 
 .header-container {
-    border-bottom: 20px solid   #008BB9;
+    border-bottom: 20px solid #008BB9;
 }
 
-.footer-container{
-    border-top: 20px solid #008BB9;
-}
+.footer-container,
 .main aside {
-    border: 2px solid black;
+    border-top: 20px solid #008BB9;
 }
 
 .header-container,
 .footer-container{
     background: #0099CC;
 }
-
+.footer-container {
+    bottom: 0;
+    position: absolute;
+    width: 100%
+}
 
 .title {
     color: white;
+}
+
 /* ==============
     MOBILE: Menu
    ============== */
@@ -133,7 +137,7 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
+    color: black;
     padding: 0px 5% 10px;
 }
 
@@ -370,4 +374,4 @@ nav a:hover {
     h3 {
         page-break-after: avoid;
     }
-}
+}   
