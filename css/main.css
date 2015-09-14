@@ -70,24 +70,24 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid   #008BB9;
 }
 
-.footer-container,
+.footer-container{
+    border-top: 20px solid #008BB9;
+}
 .main aside {
-    border-top: 20px solid #e44d26;
+    border: 2px solid black;
 }
 
 .header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
+.footer-container{
+    background: #0099CC;
 }
+
 
 .title {
     color: white;
-}
-
 /* ==============
     MOBILE: Menu
    ============== */
@@ -239,12 +239,12 @@ nav a:hover {
 
     .main article {
         float: left;
-        width: 57%;
+        width: 45%;
     }
 
     .main aside {
         float: right;
-        width: 28%;
+        width: 40%;
     }
 }
 
