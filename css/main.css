@@ -51,6 +51,25 @@ textarea {
     padding: 0.2em 0;
 }
 
+label {
+    display: table-cell;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+}
+
+p {
+   display:table;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="url"]{
+    display: table-cell;
+    width:100%;
+}
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
@@ -82,11 +101,11 @@ body {
 .footer-container{
     background: #0099CC;
 }
-.footer-container {
+/*.footer-container {
     bottom: 0;
     position: absolute;
     width: 100%
-}
+}*/
 
 .title {
     color: white;
@@ -157,20 +176,6 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Media Queries

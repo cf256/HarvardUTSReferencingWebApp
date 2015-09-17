@@ -10,7 +10,7 @@
     <meta name="description" content="A simple Harvard UTS referencing Web App.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -29,63 +29,206 @@
 
             <div class="main-container">
                 <div class="main wrapper clearfix">
-
                     <article>
                         <section>
-                            <h2>Source Information</h2>
-                            <form name="referencingForm">
-                              <fieldset>
-                                <legend>What kind of source is it?</legend>
-                                <p>
-                                    <input type="radio" name="source" value="Book" id="book" />
-                                    <label for="book">Book</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="source" value="Journal" id="journal" />
-                                    <label for="journal">Journal Article</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="source" value="Newspaper" id="newspaper" />
-                                    <label for="newspaper">Newspaper or Magazine</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="source" value="Website" id="website" />
-                                    <label for="website">Website or Social Media</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="source" value="Legal" id="legal" />
-                                    <label for="legal">Legal Material</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="source" value="Other" id="other" />
-                                    <label for="book">Other</label>
-                                </p>
+                            <form id="referencingForm">
+                                <!-- fieldsets -->
+                                <fieldset id="sourceTypeFieldset">
+                                    <legend>What type of source is it?</legend>
+                                    <select id="sourceType" name="sourcetype">
+                                        <option value="" selected="selected"></option>
+                                        <option value="book">Book</option>
+                                        <option value="journal">Journal Article</option>
+                                        <option value="newspaper">Newspaper or Magazine</option>
+                                        <option value="website">Website or Social Media</option>
+                                        <option value="sound">Sound, film and Image</option>
+                                        <option value="legal">Legal Material</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </fieldset>
+                                <section id="sourceInformation">
+                                    <fieldset id="bookFieldset" name="bookFieldset" class="hidden">
+                                        <p>
+                                            <label for="author">Author(s):</label>
+                                            <input type="text" name="author" id="author" />
+                                        </p>
+                                        <p>
+                                            <label for="year">Year:</label>
+                                            <input type="number" name="year" id="year" min=1800 max=2100 />
+                                        </p>
+                                        <p>
+                                            <label for="editCheckbox">Is it an edited book?</label>
+                                            <input type="checkbox" id="editCheckbox" name="edited" />
+                                        </p>
+                                        <section id="editedInformation" class="hidden">
+                                            <p>
+                                                <label for="editor">Editor(s): </label>
+                                                <input type="text" name="editor" id="editor" />
+                                            </p>
+                                            <p>
+                                                <label for="chapter">Chapter Title: </label>
+                                                <input type="text" name="chapter" id="chapter" />
+                                            </p>
+                                            <p>
+                                                <label for="pageNumbers">Chapter Page Numbers: </label>
+                                                <input type="text" name="pageNumbers" id="pageNumbers" />
+                                            </p>
+                                        </section>
+                                        <p>
+                                            <label for="title">Title:</label>
+                                            <input type="text" name="title" id="title" />
+                                        </p>
+                                        <p>
+                                            <label for="edition">Edition: </label>
+                                            <input type="number" name="edition" id="edition" />
+                                        </p>
+                                        <p>
+                                            <label for="publisher">Publisher:</label>
+                                            <input type="text" name="publisher" id="publisher" />
+                                        </p>
+                                        <p>
+                                            <label for="placeOfPublication">Place of publication:</label>
+                                            <input type="text" name="placeOfPublication" id="placeOfPublication" />
+                                        </p>
+                                        <p>
+                                            <input type="button" value="Submit" id="bookButton" />
+                                        </p>
+                                    </fieldset>
+                                    <fieldset id="journalFieldset" name="journalFieldset" class="hidden">
+                                        <p>
+                                            <label for="author">Author(s):</label>
+                                            <input type="text" name="author" id="author" />
+                                        </p>
+                                        <p>
+                                            <label for="year">Year:</label>
+                                            <input type="number" name="year" id="year" />
+                                        </p>
+                                        <p>
+                                            <label for="title">Title of article:</label>
+                                            <input type="text" name="title" id="title" />
+                                        </p>
+                                        <p>
+                                            <label for="titleJournal">Title of journal:</label>
+                                            <input type="text" name="titleJournal" id="titleJournal" />
+                                        </p>
+                                        <p>
+                                            <label for="voulme">Volume no: </label>
+                                            <input type="number" name="volume" id="volume" />
+                                        </p>
+                                        <p>
+                                            <label for="issue">Issue no: </label>
+                                            <input type="number" name="issue" id="issue" />
+                                        </p>
+                                        <p>
+                                            <label for="pageNumbers">Page numbers: </label>
+                                            <input type="text" name="pageNumbers" id="pageNumbers" />
+                                        </p>
+                                    </fieldset>
+                                    <fieldset id="newspaperFieldset" name="newspaperFieldset" class="hidden">
+                                        <p>
+                                            <label for="author">Author(s):</label>
+                                            <input type="text" name="author" id="author" />
+                                        </p>
+                                        <p>
+                                            <label for="year">Year:</label>
+                                            <input type="number" name="year" id="year" />
+                                        </p>
+                                        <p>
+                                            <label for="title">Title of article:</label>
+                                            <input type="text" name="title" id="title" />
+                                        </p>
+                                        <p>
+                                            <label for="title">Title of newspaper/magazine:</label>
+                                            <input type="text" name="titleJournal" id="titleJournal" />
+                                        </p>
+                                        <p>
+                                            <label for="issueDate">Issue date</label>
+                                            <input type="date" name="issueDate" id="issueDate" />
+                                        </p>
+                                        <p>
+                                            <label for="pageNumbers">Page numbers: </label>
+                                            <input type="text" name="pageNumbers" id="pageNumbers" />
+                                        </p>
+                                        <p>
+                                            <label for="onlineCheckbox">Online?</label>
+                                            <input type="checkbox" id="onlineCheckbox" name="onlineCheckbox" />
+                                        </p>
+                                        <section id="onlineInformation" class="hidden">
+                                            <p>
+                                                <label for="url">Url: </label>
+                                                <input type="url" name="url" id="url" />
+                                            </p>
+                                            <p>
+                                                <label for="viewedDate">Viewed date: </label>
+                                                <input type="date" name="viewedDate" id="viewedDate" />
+                                            </p>
+                                        </section>
+                                    </fieldset>
+                                    <fieldset id="websiteFieldset" name="websiteFieldset" class="hidden">
+                                       <p>
+                                        <label for="author">Author(s):</label>
+                                        <input type="text" name="author" id="author" />
+                                    </p>
+                                    <p>
+                                        <label for="year">Year:</label>
+                                        <input type="number" name="year" id="year" />
+                                    </p>
+                                    <p>
+                                        <label for="title">Title of webpage:</label>
+                                        <input type="text" name="title" id="title" />
+                                    </p>
+                                    <p>
+                                        <label for="org">Organisation responsible for the website</label>
+                                        <input type="text" name="org" id="org" />
+                                    </p>
+                                    <p>
+                                        <label for="orgPlace">Location of organisation</label>
+                                        <input type="text" name="orgPlace" id="orgPlace" />
+                                    </p>
+                                    <p>
+                                        <label for="viewedDate">Viewed:</label>
+                                        <input type="date" name="viewedDate" id="viewedDate" />
+                                    </p>
+                                    <p>
+                                        <label for="url">Url: </label>
+                                        <input type="url" name="url" id="url" />
+                                    </p>    
+                                </fieldset>
                             </fieldset>
-                        </form>
-                    </section>
-                </article>
+                            <fieldset id="soundFieldset" name="soundFieldset" class="hidden">
+                                <legend>Information about sound, film or image</legend>
+                            </fieldset>
+                            <fieldset id="legalFieldset" name="legalFieldset" class="hidden">
+                                <legend>Information about legal material</legend>
+                            </fieldset>
+                            <fieldset id="otherFieldset" name="otherFieldset" class="hidden">
+                                <legend>Information about other</legend>
+                            </fieldset>    
+                        </section>
+                    </form>
+                </section>
+            </article>
+            <aside>
+                <h3>In text reference:</h3>
+                <output name="inTextReference" id="inTextReference"></output>
+                <h3>Reference list:</h3>
+                <output name="referenceList" id="referenceList"></output>
+            </aside>
 
-                <aside>
-                    <h3>Output</h3>
-                    <output name="result">Butler, J.E., Severino, C. & Guerra, J.C. 1997, Writing in multicultural settings, Modern Language Association of America, New York.</output>
-                </aside>
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+    <div class="footer-container">
+        <footer class="wrapper">
+            <h3>Made by Christian Fredrik Linchausen</h3>
+        </footer>
+    </div>
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>Made by Christian Fredrik Linchausen</h3>
-            </footer>
-        </div>
-
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!-- <script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+            <!-- <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
